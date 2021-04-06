@@ -15,7 +15,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
                   -o APT::AutoRemove::RecommendsImportant=false \
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
- && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+ && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
  && mkdir -p /fluentd/etc/
 
 #COPY fluent.conf /fluentd/etc/

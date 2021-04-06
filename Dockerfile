@@ -20,6 +20,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  
 
 #COPY fluent.conf /fluentd/etc/
-COPY entrypoint.sh /bin/
+#COPY entrypoint.sh /bin/
 
 USER fluent
+ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
+CMD ["fluentd"]

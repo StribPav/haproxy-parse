@@ -10,7 +10,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && apt-get install -y --no-install-recommends $buildDeps \
  && apt-get install -y \
         nmap \
-        vim
+        vim \
  && sudo gem install fluent-plugin-elasticsearch \
  && sudo gem install fluent-plugin-kubernetes_metadata_filter \
  && sudo gem install fluent-plugin-rewrite-tag-filter \

@@ -16,12 +16,12 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
                   $buildDeps \
- && mkdir -p /fluentd/etc/ \
+# && mkdir -p /fluentd/etc/ \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem 
  
 
-COPY kubernetes_namespace_metadata.rb /etc/fluent/plugin
+COPY kubernetes_namespace_metadata.rb /fluentd/plugins
 #COPY entrypoint.sh /bin/
 
 USER fluent

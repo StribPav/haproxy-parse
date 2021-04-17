@@ -21,7 +21,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem 
  
 
-#COPY fluent.conf /fluentd/etc/
+COPY kubernetes_namespace_metadata.rb /etc/fluent/plugin
 #COPY entrypoint.sh /bin/
 
 USER fluent

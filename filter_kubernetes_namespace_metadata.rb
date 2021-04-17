@@ -10,14 +10,14 @@ module Fluent
 
     # config_param works like other plugins
     config_param :kubernetes_url, :string, default: nil
-  	config_param :apiVersion, :string, default: 'v1'
+    config_param :apiVersion, :string, default: 'v1'
     config_param :client_cert, :string, default: nil
     config_param :client_key, :string, default: nil
     config_param :ca_file, :string, default: nil
     config_param :verify_ssl, :bool, default: true
-  	config_param :bearer_token_file, :string, default: nil
-  	config_param :secret_dir, :string, default: '/var/run/secrets/kubernetes.io/serviceaccount'
-  	config_param :tag_to_kubernetes_name_regexp,
+    config_param :bearer_token_file, :string, default: nil
+    config_param :secret_dir, :string, default: '/var/run/secrets/kubernetes.io/serviceaccount'
+    config_param :tag_to_kubernetes_name_regexp,
                  :string,
                  default: 'var\.log\.containers\.(?<pod_name>[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?<namespace>[^_]+)_(?<container_name>.+)-(?<docker_id>[a-z0-9]{64})\.log$'
 

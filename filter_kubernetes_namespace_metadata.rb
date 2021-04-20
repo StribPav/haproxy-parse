@@ -1,4 +1,5 @@
-require 'fluent/filter'
+require 'fluent/plugin/filter'
+require 'resolv'
 
 module Fluent
   class PassThruFilter < Filter

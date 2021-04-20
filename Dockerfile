@@ -25,7 +25,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
 
 
 ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
-#COPY entrypoint.sh /bin/
+COPY entrypoint.sh /bin/
 
 USER fluent
 ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]

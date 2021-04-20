@@ -21,10 +21,10 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
                   $buildDeps \
 # && mkdir -p /fluentd/etc/ \
  && rm -rf /var/lib/apt/lists/* \
- && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem 
- 
+ && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-#COPY filter_kubernetes_namespace_metadata.rb /fluentd/plugins
+
+COPY filter_kubernetes_namespace_metadata.rb /fluentd/plugins
 #COPY entrypoint.sh /bin/
 
 USER fluent

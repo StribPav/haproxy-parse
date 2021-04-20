@@ -24,7 +24,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
 
-COPY filter_kubernetes_namespace_metadata.rb /fluentd/plugins
+ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
 #COPY entrypoint.sh /bin/
 
 USER fluent

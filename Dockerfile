@@ -24,7 +24,9 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
  && mkdir -p /etc/fluent/plugin \
  && chown -R fluent /etc/fluent && chgrp -R fluent /etc/fluent \
- && chown -R fluent /fluentd && chgrp -R fluent /fluentd
+ && chown -R fluent /fluentd && chgrp -R fluent /fluentd \
+ && chmod -R 777 /fluentd \
+ && chmod -R 777 /etc/fluent
 
 
 

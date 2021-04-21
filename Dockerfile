@@ -27,9 +27,10 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && chown -R fluent /fluentd && chgrp -R fluent /fluentd 
 
 
-ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
+#ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
 #ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /etc/fluent/plugin
-RUN chmod -R 777 /fluentd 
+RUN chmod -R 777 /fluentd \
+ && chown -R fluent /fluentd && chgrp -R fluent /fluentd 
  
 #COPY entrypoint.sh /bin/
 

@@ -28,9 +28,9 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
 
 
 ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
-ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /etc/fluent/plugin
-RUN chmod -R 777 /fluentd \
- && chmod -R 777 /etc/fluent
+#ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /etc/fluent/plugin
+RUN chmod -R 777 /fluentd 
+ 
 #COPY entrypoint.sh /bin/
 
 USER fluent

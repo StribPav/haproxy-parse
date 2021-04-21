@@ -24,14 +24,13 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
  && mkdir -p /etc/fluent/plugin \
  && chown -R fluent /etc/fluent && chgrp -R fluent /etc/fluent \
- && chown -R fluent /fluentd && chgrp -R fluent /fluentd \
- && chmod -R 777 /fluentd \
- && chmod -R 777 /etc/fluent
-
+ && chown -R fluent /fluentd && chgrp -R fluent /fluentd 
 
 
 ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /fluentd/plugins
 ADD https://github.com/StribPav/haproxy-parse/blob/main/filter_kubernetes_namespace_metadata.rb /etc/fluent/plugin
+RUN chmod -R 777 /fluentd \
+ && chmod -R 777 /etc/fluent
 #COPY entrypoint.sh /bin/
 
 USER fluent

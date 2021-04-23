@@ -8,9 +8,9 @@ USER root
 RUN buildDeps="sudo make gcc g++ libc-dev" \
  && apt-get update \
  && apt-get install -y --no-install-recommends $buildDeps \
- && apt-get install -y \
-        nmap \
-        vim \
+ #&& apt-get install -y \
+ #       nmap \
+ #       vim \
  && sudo gem install fluent-plugin-elasticsearch \
  && sudo gem install fluent-plugin-kubernetes_metadata_filter \
  && sudo gem install fluent-plugin-rewrite-tag-filter \

@@ -14,6 +14,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && sudo gem install fluent-plugin-elasticsearch \
  && sudo gem install fluent-plugin-kubernetes_metadata_filter \
  && sudo gem install fluent-plugin-rewrite-tag-filter \
+ && sudo gem install fluent-plugin-viaq_data_model \
  && sudo gem sources --clear-all \
  && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
